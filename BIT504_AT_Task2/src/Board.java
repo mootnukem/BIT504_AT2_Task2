@@ -29,12 +29,12 @@ public class Board {
 		// TODO: Check whether the game has ended in a draw. 
 		for (int row = 0; row < GameMain.ROWS; ++row) {
 			for (int col = 0; col < GameMain.COLS; ++ col) {
-				if (cells[row][col].content == Player.Empty) {
-					return false; //If any cell is still empty, game is not a draw
+				if (cells[row][col].content == Player.Empty) { //If any cell is still empty, game is not a draw
+					return false; // isDraw return false
 				}
 			}
 		}
-		return true; //If no empty cell exists, game is a draw
+		return true; //If no empty cell exists, isDraw returns true
 	}
 	
 	/** Return true if the current player "thePlayer" has won after making their move  */
