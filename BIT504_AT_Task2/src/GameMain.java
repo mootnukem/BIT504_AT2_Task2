@@ -99,12 +99,12 @@ public class GameMain extends JPanel implements MouseListener{
 			if (currentPlayer == Player.Cross) {   
 			
 				//TODO: use the status bar to display the message "X"'s Turn
-				
+				statusBar.setText("X's turn");
 				
 			} else {    
 				
 				//TODO: use the status bar to display the message "O"'s Turn
-
+				statusBar.setText("O's turn");
 				
 			}       
 			} else if (currentState == GameState.Draw) {          
