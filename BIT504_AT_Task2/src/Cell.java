@@ -15,8 +15,7 @@ public class Cell {
 		//Initialise the variables row, col 
 		this.row = row;
 		this.col = col;
-		
-		
+				
 		//call the method that sets the cell content to EMPTY
 		clear(); 
 	}

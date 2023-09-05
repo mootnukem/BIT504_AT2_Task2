@@ -8,7 +8,7 @@ public class GameMain extends JPanel implements MouseListener{
 	//Constants for game 
 	// number of ROWS by COLS cell constants 
 	public static final int ROWS = 3;     
-	public static final int COLS = 3;  
+	public static final int COLS = 3; 
 	public static final String TITLE = "Tic Tac Toe";
 
 	//constants for dimensions used for drawing
@@ -51,7 +51,7 @@ public class GameMain extends JPanel implements MouseListener{
 		//layout of the panel is in border layout
 		setLayout(new BorderLayout());       
 		add(statusBar, BorderLayout.SOUTH);
-		// account for statusBar height in overall height
+		//account for statusBar height in overall height
 		setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
 		
 		
@@ -105,15 +105,19 @@ public class GameMain extends JPanel implements MouseListener{
 				//use the status bar to display the message "O"'s Turn
 				statusBar.setText("O's turn");
 				
-			}       
+			}  
+			//status bar display messages on game state win or draw
 			} else if (currentState == GameState.Draw) {          
-				statusBar.setForeground(Color.RED);          
+				statusBar.setForeground(Color.RED);     
+				//display if gamestate is draw
 				statusBar.setText("It's a Draw! Click to play again.");       
 			} else if (currentState == GameState.Cross_won) {          
-				statusBar.setForeground(Color.RED);          
+				statusBar.setForeground(Color.RED);        
+				//display if gamestate is cross_won
 				statusBar.setText("'X' Won! Click to play again.");       
 			} else if (currentState == GameState.Nought_won) {          
-				statusBar.setForeground(Color.RED);          
+				statusBar.setForeground(Color.RED); 
+				//display nought_won
 				statusBar.setText("'O' Won! Click to play again.");       
 			}
 		}
@@ -128,6 +132,7 @@ public class GameMain extends JPanel implements MouseListener{
 				}
 			}
 			 currentState = GameState.Playing;
+			 //Cross always starts
 			 currentPlayer = Player.Cross;
 		}
 		
