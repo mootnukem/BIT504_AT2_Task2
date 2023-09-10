@@ -39,7 +39,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public GameMain() {   
 		
 		//This JPanel fires a MouseEvent on MouseClicked        
-	    addMouseListener(this);
+	    addMouseListener(this); //adding mouse listener to GameMain object itself
 	    
 		// Setup the status bar (JLabel) to display status message       
 		statusBar = new JLabel("         ");       
@@ -97,12 +97,12 @@ public class GameMain extends JPanel implements MouseListener{
 			statusBar.setForeground(Color.BLACK);          
 			if (currentPlayer == Player.Cross) {   
 			
-				//use the status bar to display the message "X"'s Turn
+				//use the status bar to display the message X's Turn
 				statusBar.setText("X's turn");
 				
 			} else {    
 				
-				//use the status bar to display the message "O"'s Turn
+				//use the status bar to display the message O's Turn
 				statusBar.setText("O's turn");
 				
 			}  
@@ -110,11 +110,11 @@ public class GameMain extends JPanel implements MouseListener{
 			} else if (currentState == GameState.Draw) {          
 				statusBar.setForeground(Color.RED);     
 				//display if gamestate is draw
-				statusBar.setText("It's a Draw! Click to play again.");       
+				statusBar.setText("It's a Draw! Click to play again."); //prompt click to play again  
 			} else if (currentState == GameState.Cross_won) {          
 				statusBar.setForeground(Color.RED);        
 				//display if gamestate is cross_won
-				statusBar.setText("'X' Won! Click to play again.");       
+				statusBar.setText("'X' Won! Click to play again.");  //prompt click to play again
 			} else if (currentState == GameState.Nought_won) {          
 				statusBar.setForeground(Color.RED); 
 				//display nought_won
@@ -127,7 +127,7 @@ public class GameMain extends JPanel implements MouseListener{
 		public void initGame() {
 			for (int row = 0; row < ROWS; ++row) {          
 				for (int col = 0; col < COLS; ++col) {  
-					// all cells empty
+					// empty cells
 					board.cells[row][col].content = Player.Empty;           
 				}
 			}

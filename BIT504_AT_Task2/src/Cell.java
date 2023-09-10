@@ -13,7 +13,8 @@ public class Cell {
 	public Cell(int row, int col) {
 		
 		//Initialise the variables row, col 
-		this.row = row;
+		//pass values for row and col to constructor
+		this.row = row; 
 		this.col = col;
 				
 		//call the method that sets the cell content to EMPTY
