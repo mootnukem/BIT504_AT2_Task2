@@ -12,22 +12,23 @@ public class Board {
 	/** Constructor to create the game board */
 	public Board() {
 		
-	 //initialise the cells array using ROWS and COLS constants 
-		cells = new Cell[GameMain.ROWS][GameMain.COLS];
+	 //initialise the 2D array 'Cell' using ROWS and COLS constants 
+		cells = new Cell[GameMain.ROWS][GameMain.COLS];//Array created cells of Cell, size determined by constants.
 		
-		for (int row = 0; row < GameMain.ROWS; ++row) {
-			for (int col = 0; col < GameMain.COLS; ++col) {
-				cells[row][col] = new Cell(row, col);
+		//nested loops for each element of the 2D array
+		for (int row = 0; row < GameMain.ROWS; ++row) { //iterates through each row
+			for (int col = 0; col < GameMain.COLS; ++col) { //iterates through each column within current row
+				cells[row][col] = new Cell(row, col); //create new instance of Cell, row and col values passed to Cell constructor
 			}
 		}
 	}
 	
 
 	 /** Return true if it is a draw (i.e., no more EMPTY cells) */ 
-	public boolean isDraw() {
+	public boolean isDraw() { 
 		 
 		//Check whether the game has ended in a draw. 
-		for (int row = 0; row < GameMain.ROWS; ++row) {
+		for (int row = 0; row < GameMain.ROWS; ++row) {//for loops iterate through each cell
 			for (int col = 0; col < GameMain.COLS; ++ col) {
 				if (cells[row][col].content == Player.Empty) { //If any cell is still empty, game is not a draw
 					return false; // isDraw return false
